@@ -84,6 +84,8 @@ dependencies = [
     "cmake>=3.29.0.1,<4.2.0",
     "setuptools>=71.0.0,<82.0.0",  # torch 2.11 requires setuptools<82; a higher cap makes the resolver downgrade torch
     "tensorboard>=2.20.0",
+    "mlflow>=3.13.0",
+    "psycopg2-binary>=2.9.10",
 ]
 
 # Optional dependencies
