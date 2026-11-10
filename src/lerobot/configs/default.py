@@ -111,6 +111,23 @@ class TensorBoardConfig:
 
 
 @dataclass
+class MLflowConfig:
+    enable: bool = False
+    experiment_name: str = "lerobot"
+    run_name: str | None = None
+    run_id: str | None = None
+    # Optional explicit tracking URI override; if None, defers to MLFLOW_TRACKING_URI env var
+    # or a local SQLite database under output_dir.
+    tracking_uri: str | None = None
+    # Optional local or FUSE-mounted directory for storing mlflow-artifacts:/ directly on disk.
+    local_artifact_root: str | None = None
+    # Set to true to disable saving model checkpoint artifacts despite training.save_checkpoint=True.
+    disable_artifact: bool = True
+    add_tags: bool = True
+    notes: str | None = None
+
+
+@dataclass
 class EvalConfig:
     n_episodes: int = 50
     # `batch_size` specifies the number of environments to use in a gym.vector.VectorEnv.
